@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { supabase } from "../lib/supabaseClient";
 import FranLogo from "../components/FranLogo";
-import "./login.css";
+import "./Login.css";
 
 /** 
  * Elegí el color de íconos acá:
