@@ -1,0 +1,67 @@
+.hubMain{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 28px 18px 60px;
+}
+
+.hubTitle{
+  font-size: 46px;
+  line-height: 1.1;
+  color: #0F2B23;
+  text-align: center;          /* centrado */
+  margin: 8px 0 8px;
+  letter-spacing: .2px;
+}
+
+.hubSubtitle{
+  text-align: center;
+  color: #456;
+  margin: 0 0 28px;
+  font-size: 16px;
+}
+.hubBranch{ color: #0F2B23; }
+
+.hubGrid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 26px;
+}
+
+.hubCard{
+  text-align: left;
+  display: grid;
+  grid-template-columns: 76px 1fr;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  border: 0;
+  background: #fff;
+  border-radius: 18px;
+  padding: 20px 22px;
+  cursor: pointer;
+  box-shadow: 0 28px 80px rgba(2,48,37,.08), 0 8px 24px rgba(2,48,37,.05);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.hubCard:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 36px 90px rgba(2,48,37,.12), 0 10px 26px rgba(2,48,37,.06);
+}
+
+.hubIcon{
+  width: 76px; height: 76px; border-radius: 20px;
+  display: grid; place-items: center;
+}
+.hubIcon--green{ background: #e7f3ef; }
+.hubIcon--peach{ background: #fde9d8; }
+
+.hubText{ display: grid; gap: 6px; }
+.hubCardTitle{
+  font-size: 26px; font-weight: 800; color: #0F2B23;
+}
+.hubCardDesc{
+  font-size: 16px; color: #567;
+}
+
+@media (max-width: 860px){
+  .hubGrid{ grid-template-columns: 1fr; }
+}

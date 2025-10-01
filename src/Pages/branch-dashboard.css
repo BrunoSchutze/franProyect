@@ -1,0 +1,208 @@
+/* =========================
+   Panel de Facturación - Estilos
+   Paleta: rosa (#E9CDCB) y marrón (#302419)
+   ========================= */
+
+.dash-wrap {
+  background: #fff; /* sin franjas de color de fondo */
+}
+
+/* Contenedor general del panel */
+.dash-container {
+  max-width: 100%;
+  margin: 0;
+  padding: 8px 12px 8px !important; /* elimina espacio inferior extra */
+}
+
+/* ======= Título de página ======= */
+.page-title {
+  text-align: center;
+  color: var(--ink, #302419);
+  font-weight: 800;
+  font-size: clamp(22px, 3vw, 30px);
+  margin: 8px 12px 6px;
+}
+
+/* ======= Panel que envuelve secciones ======= */
+.panel-3d {
+  border: 1px solid var(--rose, #E9CDCB);
+  border-radius: 0;
+  background: var(--card, #fff);
+  box-shadow:
+    0 24px 46px rgba(48, 36, 25, .10),
+    0 6px 14px rgba(48, 36, 25, .06);
+  padding: 12px;
+  margin-bottom: 0 !important;
+}
+
+/* ======= Cards internas ======= */
+.kpi-card {
+  position: relative;
+  border: 1px solid var(--rose, #E9CDCB);
+  border-radius: 12px;
+  background: var(--card, #fff);
+  padding: 12px 14px;
+  box-shadow:
+    0 14px 28px rgba(48,36,25,.12),
+    0 6px 12px rgba(48,36,25,.08),
+    inset 0 1px 0 rgba(255,255,255,.65);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.kpi-card:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 18px 34px rgba(48,36,25,.14),
+    0 8px 16px rgba(48,36,25,.10),
+    inset 0 1px 0 rgba(255,255,255,.7);
+}
+
+/* Etiquetas/Títulos de card (p.ej. “Objetivo diario”) */
+.kpi-card .label,
+.kpi-card .section-label,
+.kpi-title {
+  color: var(--ink, #302419);
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  padding-bottom: 15px;        /* +15px abajo como pediste */
+  display: block;
+}
+
+/* mini barras decorativas */
+.card-kicker,
+.kicker-row {
+  display: flex;
+  gap: 6px;
+  margin: 6px 0 10px;
+}
+.card-kicker .bar,
+.kicker-row .bar {
+  height: 6px;
+  border-radius: 6px;
+  background: var(--rose, #E9CDCB);
+}
+.card-kicker .bar.b1, .kicker-row .bar.b1 { width: 22px; opacity: .9; }
+.card-kicker .bar.b2, .kicker-row .bar.b2 { width: 36px; background: var(--ink, #302419); opacity: .9; }
+.card-kicker .bar.b3, .kicker-row .bar.b3 { width: 28px; opacity: .85; }
+
+/* filas simples dentro de las cards */
+.row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: 4px 0;
+  color: var(--ink, #302419);
+}
+
+/* ======= Barras de progreso (semanal/mensual) ======= */
+.bars { display: grid; gap: 10px; }
+
+.bar-row {
+  display: grid;
+  grid-template-columns: 120px 1fr auto;
+  align-items: center;
+  gap: 10px;
+}
+
+.bar-label { color: var(--ink, #302419); font-weight: 700; }
+
+.bar-track {
+  height: 14px;
+  border-radius: 999px;
+  background: #f8f1f0;
+  border: 1px solid #ecdedd;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  background: var(--rose, #E9CDCB);
+  box-shadow: inset 0 -1px 0 rgba(48,36,25,.08);
+}
+.bar-fill.is-goal {
+  background: rgba(48, 36, 25, .2);
+}
+
+.bar-value {
+  font-weight: 700;
+  color: var(--ink, #302419);
+}
+
+/* ======= Visualizaciones (donut + gauges) ======= */
+.viz-grid {
+  display: grid;
+  gap: 20px;                          /* más aire entre gráficas */
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.viz-box {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 18px;                 /* + separación lateral */
+}
+
+/* Títulos de gráficas centrados con +15 de espacio abajo */
+.viz-title {
+  text-align: center;
+  color: var(--ink, #302419);
+  font-weight: 700;
+  margin: 6px 0 25px;                 /* 10 + 15 = 25px abajo */
+}
+
+/* Reducimos un poco los SVG y centrados */
+.viz-box svg {
+  max-width: 78%;
+  margin: 0 auto;
+  display: block;
+}
+
+/* Donut: layout + leyenda */
+.donut .donut-wrap {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  column-gap: 16px;
+}
+.donut .donut-wrap svg { max-width: 70%; }
+.donut-track { fill: none; stroke: #f4e9e7; }
+
+.donut-legend { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.donut-legend li { color: var(--ink, #302419); font-size: 14px; }
+.donut-legend .dot {
+  width: 10px; height: 10px; border-radius: 999px; display: inline-block; margin-right: 6px;
+}
+
+/* Gauges */
+.gauge svg { display: block; }
+.gauge-track { stroke: #f4e9e7; }
+.gauge-fill  { stroke: var(--rose, #E9CDCB); }
+.gauge-value {
+  text-align: center;
+  margin-top: 8px;
+  color: var(--ink, #302419);
+}
+
+/* ======= Ticket promedio ======= */
+.ticket-amount {
+  font-size: clamp(18px, 2.2vw, 22px);
+  color: var(--ink, #302419);
+}
+.ticket-amount .currency {
+  margin-right: 4px;
+  opacity: .9;
+}
+
+/* ======= Responsivo ======= */
+@media (max-width: 1200px) {
+  .panel-3d > div[style*="grid-template-columns: repeat(5"] {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .panel-3d > div[style*="grid-template-columns: repeat(5"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  .bar-row { grid-template-columns: 100px 1fr auto; }
+  .viz-grid { grid-template-columns: 1fr; }
+}

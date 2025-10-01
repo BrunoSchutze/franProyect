@@ -1,0 +1,23 @@
+# Node / Vite / React
+node_modules/
+dist/
+.vite/
+.cache/
+coverage/
+
+# SO y editores
+.DS_Store
+Thumbs.db
+*.log
+
+# Env (¡no subir a Git!)
+.env
+.env.local
+.env.*.local
+
+# Build tools
+*.tsbuildinfo
+
+# Opcional
+.vscode/
+.idea/
